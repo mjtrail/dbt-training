@@ -1,12 +1,11 @@
 {{ config(materialized='table') }}
 
-with source_data as (
+with account_data as (
 
-    select 1 as id
-    union all
-    select null as id
+    select id as id
+    from TABLE RAW.SALESFORCE.ACCOUNT
 
 )
 
 select *
-from source_data
+from account_data
